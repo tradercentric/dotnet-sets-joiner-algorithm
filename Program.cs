@@ -49,10 +49,10 @@ namespace SetJoiner
                     newGroups.Remove(s1);
                     newGroups.Remove(s2);
                     var mergedName = s1.GroupName + "&" + s2.GroupName;
-                    var union = new HashSet<string>(s1.AccountNames);
-                    union.UnionWith(s2.AccountNames);
+                    var unions = new HashSet<string>(s1.AccountNames);
+                    unions.UnionWith(s2.AccountNames);
 
-                    var newGroup = new Group {GroupName = mergedName, AccountNames = union};
+                    var newGroup = new Group {GroupName = mergedName, AccountNames = unions};
                     newGroups.Add(newGroup);
                     isIntersected = true;
                     break;
